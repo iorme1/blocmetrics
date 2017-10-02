@@ -1,0 +1,5 @@
+<div class="page-header">
+  <h3>Your Registered Applications</h3>
+</div>
+<%= render 'applications/form', locals: {user: @user, application: @application} %> <br />
+<%= render 'applications/application', locals: {user: @user, applications: @applications} %> 
