@@ -1,9 +1,9 @@
-<h4> Registered Apps: </h4> 
+<h4> Registered Apps: </h4>
 <% current_user.applications.each do |application| %>
   <div class="media">
     <div class="media-body">
       <h5 class="media-heading">
-    <%= application.name %> - <%= application.url %>
+    <%= link_to application.name, user_application_path(@user, application.id) %> - <%= application.url %>
     <%= link_to "Unregister Application", user_application_path(@user, application.id), class: "btn btn-danger", method: :delete,
     data: { confirm: "Are you sure you want to unregister this application? "} %>
       </h5>

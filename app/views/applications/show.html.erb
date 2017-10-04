@@ -1,0 +1,11 @@
+<div class="page-header">
+  <h3><%= @application.name %></h3>
+</div>
+<h4> Total Events: <%= @events.count %> </h4>
+<h4>List of Events:</h4>
+<ul>
+  <% @events.each do |key,array| %>
+    <li><%= key %></li>
+    <p>event count: <%= array.count %></p>
+  <% end %>
+</ul>

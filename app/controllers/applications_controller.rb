@@ -1,5 +1,10 @@
 class ApplicationsController < ApplicationController
 
+  def show
+    @application = current_user.applications.find(params[:id])
+    @events = @application.events.group_by(&:name)
+  end
+
   def create
     @application = current_user.applications.new(applications_params)
 
