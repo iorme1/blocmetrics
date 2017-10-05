@@ -2,6 +2,7 @@
   User.create!(
     email: Faker::Internet.email,
     password: 123123
+    confirmed_at: Time.now
   )
 end
 
@@ -10,7 +11,8 @@ users = User.all
 50.times do
   Application.create!(
     name: Faker::Lorem.sentence,
-    user: users.sample
+    user: users.sample,
+    url: Faker::Internet.url
   )
 end
 
