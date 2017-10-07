@@ -13,6 +13,8 @@ group :development do
   gem 'web-console', '~> 2.0'
 end
 
+gem 'groupdate'
+gem "chartkick"
 gem 'devise'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'sass-rails', '~> 5.0'

@@ -6,6 +6,7 @@
 <ul>
   <% @events.each do |key,array| %>
     <li><%= key %></li>
-    <p>event count: <%= array.count %></p>
   <% end %>
+  <%= pie_chart @application.events.group(:name).count %>
+  <%= line_chart @application.events.group_by_day(:created_at).count %>
 </ul>

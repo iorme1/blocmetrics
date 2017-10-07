@@ -1,7 +1,7 @@
 20.times do
   User.create!(
     email: Faker::Internet.email,
-    password: 123123
+    password: 123123,
     confirmed_at: Time.now
   )
 end
@@ -18,7 +18,7 @@ end
 
 applications = Application.all
 
-150.times do
+300.times do
   Event.create!(
     name: Faker::Lorem.sentence,
     application: applications.sample
