@@ -8,8 +8,7 @@
 </head>
 <body>
 
-  <nav class="navbar navbar-default">
-    <%= render 'layouts/messages' %>
+  <nav class="navbar navbar-default page-nav">
     <div class="navbar-header">
       <%= link_to "Blocmetrics", root_path, class: "navbar-brand" %>
     </div>
@@ -18,16 +17,24 @@
         <li> <%= link_to "Sign Up", new_user_registration_path %> </li>
         <% if user_signed_in? %>
           <li> <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
-          <strong> <%= current_user.email %> </strong></li>
+          <strong> <%= current_user.email %> </strong>
+          </li>
           <li> <%= link_to "Your Registered Applications", user_path(current_user) %> </li>
         <% else %>
           <li> <%= link_to "Sign in", new_user_session_path %> </li>
         <% end %>
-      </div>
-    </nav>
+      </ul>
+    </div>
+  </nav>
+  <div class="flash">
+    <%= render 'layouts/messages' %>
+  </div>
 
-    <div class="container-fluid">
+    <div class="container">
       <%= yield %>
     </div>
+
+
+
 </body>
 </html>

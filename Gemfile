@@ -13,6 +13,7 @@ group :development do
   gem 'web-console', '~> 2.0'
 end
 
+gem 'bootswatch-rails'
 gem 'groupdate'
 gem "chartkick"
 gem 'devise'

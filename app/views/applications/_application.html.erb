@@ -1,12 +1,14 @@
-<h4> Registered Apps: </h4>
+<div class="row">
+  <h4> Registered Apps: </h4>
+</div>
 <% current_user.applications.each do |application| %>
-  <div class="media">
+  <div class="media" style="margin-bottom: 20px;">
     <div class="media-body">
-      <h5 class="media-heading">
-    <%= link_to application.name, user_application_path(@user, application.id) %> - <%= application.url %>
-    <%= link_to "Unregister Application", user_application_path(@user, application.id), class: "btn btn-danger", method: :delete,
-    data: { confirm: "Are you sure you want to unregister this application? "} %>
-      </h5>
+      <div class="media-heading">
+        <p><%= link_to application.name, user_application_path(@user, application.id) %> - <strong><%= application.url %></strong></p>
+        <p><%= link_to "Unregister", user_application_path(@user, application.id), class: "btn btn-danger btn-sm pull-left", method: :delete,
+        data: { confirm: "Are you sure you want to unregister this application? "} %></p>
+      </div>
     </div>
   </div>
 <% end %>
